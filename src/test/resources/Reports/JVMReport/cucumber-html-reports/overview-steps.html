@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<script src="js/jquery.min.js"></script>
+<script src="js/jquery.tablesorter.min.js"></script>
+<script src="js/Chart.min.js"></script>
+<script src="js/moment.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+
+<link rel="stylesheet" href="css/bootstrap.min.css" type="text/css"/>
+<link rel="stylesheet" href="css/cucumber.css" type="text/css"/>
+<link rel="stylesheet" href="css/font-awesome.min.css"/>
+<link rel="shortcut icon" href="images/favicon.png"/>
+
+<script>
+$(document).ready(function() {
+    // this will tell tablesorter to try looking for the data-value attribute
+    // if present, it'll sort by that instead
+    // otherwise, it'll sort by the text content of the table cell
+    $("#tablesorter").tablesorter({
+        textAttribute: 'data-value',
+        // ignores the first row of the header, the 'scenario', 'steps', since
+        // sorting those doesn't make sense
+        selectorHeaders: '> thead tr:not(.dont-sort) th',
+        // use a stable sort
+        sortStable: true
+    });
+});
+</script>
+
+
+
+
+
+
+
+
+
+
+
+<title>Cucumber Reports  - Steps Overview</title>
+
+</head>
+<body>
+
+<nav class="navbar navbar-default navbar-fixed-top" id="navigation">
+  <div class="container-fluid">
+    <div class="collapse navbar-collapse">
+      <p class="navbar-text navbar-left">Cucumber Report</p>
+      <ul class="nav navbar-nav navbar-right">
+        <li role="presentation" ><a href="overview-features.html">Features</a></li>
+        <li role="presentation" ><a href="overview-tags.html">Tags</a></li>
+        <li role="presentation"     class="active" ><a href="overview-steps.html">Steps</a></li>
+        <li role="presentation" ><a href="overview-failures.html">Failures</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+
+<div class="container-fluid">
+  <div class="col-md-5 col-md-offset-1">
+
+<table class="table table-bordered" id="build-info">
+  <thead>
+    <tr>
+      <th>Project</th>
+      <th>Date</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr class="info">
+      <td>Magneto</td>
+      <td>12 Jan 2025, 15:30</td>
+    </tr>
+  </tbody>
+</table>
+
+  </div>
+  <div class="col-md-3 col-md-offset-2">
+  </div>
+</div>
+
+
+<div id="report-lead" class="container-fluid">
+  <div class="col-md-10 col-md-offset-1">
+    <h2>Steps Statistics</h2>
+      <p>The following graph shows step statistics for this build. Below list is based on results.
+ step does not provide information about result then is not listed below.
+ Additionally @Before and @After are not counted because they are part of the scenarios, not steps.</p>
+  </div>
+</div>
+
+<div class="container-fluid" id="report">
+  <div class="row">
+    <div class="col-md-10 col-md-offset-1">
+      <table id="tablesorter" class="stats-table table-hover">
+
+        <thead>
+          <tr class="header">
+            <th>Implementation</th>
+            <th>Occurrences</th>
+            <th>Average duration</th>
+            <th>Max duration</th>
+            <th>Total durations</th>
+            <th>Ratio</th>
+          </tr>
+        </thead>
+
+        <tbody>
+            <tr>
+              <td class="location">org.stepdefenition.CartFeature.the_user_has_click_add_to_cart()</td>
+              <td>1</td>
+              <td class="duration" data-value="1143000000">1.143</td>
+              <td class="duration" data-value="1143000000">1.143</td>
+              <td class="duration" data-value="1143000000">1.143</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">org.stepdefenition.CartFeature.the_user_has_to_enter_email_and_password(io.cucumber.datatable.DataTable)</td>
+              <td>1</td>
+              <td class="duration" data-value="225000000">0.225</td>
+              <td class="duration" data-value="225000000">0.225</td>
+              <td class="duration" data-value="225000000">0.225</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">org.stepdefenition.CartFeature.user_has_to_got_to_mens_category_under_top_select_jacket()</td>
+              <td>1</td>
+              <td class="duration" data-value="2167000000">2.167</td>
+              <td class="duration" data-value="2167000000">2.167</td>
+              <td class="duration" data-value="2167000000">2.167</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">org.stepdefenition.CartFeature.user_has_to_select_the_product_and_select_size_and_colour()</td>
+              <td>1</td>
+              <td class="duration" data-value="336000000">0.336</td>
+              <td class="duration" data-value="336000000">0.336</td>
+              <td class="duration" data-value="336000000">0.336</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">org.stepdefenition.Hooks.afterScenario(io.cucumber.java.Scenario)</td>
+              <td>5</td>
+              <td class="duration" data-value="869800000">0.869</td>
+              <td class="duration" data-value="869800000">1.063</td>
+              <td class="duration" data-value="4349000000">4.349</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">org.stepdefenition.Hooks.beforeScenario()</td>
+              <td>5</td>
+              <td class="duration" data-value="6274400000">6.274</td>
+              <td class="duration" data-value="6274400000">7.430</td>
+              <td class="duration" data-value="31372000000">31.372</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">org.stepdefenition.LoginFeature.the_user_has_to_click_sigin_in_button()</td>
+              <td>4</td>
+              <td class="duration" data-value="1526250000">1.526</td>
+              <td class="duration" data-value="1526250000">2.256</td>
+              <td class="duration" data-value="6105000000">6.105</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">org.stepdefenition.LoginFeature.the_user_has_to_click_signin_button()</td>
+              <td>4</td>
+              <td class="duration" data-value="1946500000">1.946</td>
+              <td class="duration" data-value="1946500000">2.370</td>
+              <td class="duration" data-value="7786000000">7.786</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">org.stepdefenition.LoginFeature.the_user_has_to_enter_and(java.lang.String,java.lang.String)</td>
+              <td>3</td>
+              <td class="duration" data-value="270000000">0.270</td>
+              <td class="duration" data-value="270000000">0.309</td>
+              <td class="duration" data-value="810000000">0.810</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">org.stepdefenition.LoginFeature.the_user_should_be_in_home_page()</td>
+              <td>3</td>
+              <td class="duration" data-value="36000000">0.036</td>
+              <td class="duration" data-value="36000000">0.037</td>
+              <td class="duration" data-value="108000000">0.108</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">org.stepdefenition.RegistrationFeature.the_user_has_to_click_create_account_button()</td>
+              <td>1</td>
+              <td class="duration" data-value="1772000000">1.772</td>
+              <td class="duration" data-value="1772000000">1.772</td>
+              <td class="duration" data-value="1772000000">1.772</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">org.stepdefenition.RegistrationFeature.the_user_has_to_click_create_an_account_button()</td>
+              <td>1</td>
+              <td class="duration" data-value="1425000000">1.425</td>
+              <td class="duration" data-value="1425000000">1.425</td>
+              <td class="duration" data-value="1425000000">1.425</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">org.stepdefenition.RegistrationFeature.the_user_has_to_enter_the_details_in_required_fields(io.cucumber.datatable.DataTable)</td>
+              <td>1</td>
+              <td class="duration" data-value="506000000">0.506</td>
+              <td class="duration" data-value="506000000">0.506</td>
+              <td class="duration" data-value="506000000">0.506</td>
+              <td class="passed">100.00%</td>
+            </tr>
+        </tbody>
+
+        <tfoot class="total">
+          <tr>
+            <td>13</td>
+            <td>31</td>
+            <td class="duration">1.874</td>
+            <td class="duration">31.372</td>
+            <td class="duration">58.104</td>
+            <td>Totals</td>
+          </tr>
+        </tfoot>
+
+      </table>
+    </div>
+  </div>
+</div>
+
+
+<nav class="navbar navbar-default" id="footer">
+  <div class="container-fluid">
+    <p class="navbar-text navbar-right">
+        <small>generate Cucumber HTML reports via:&nbsp;</small>
+        <a class="navbar-link" href="https://github.com/jenkinsci/cucumber-reports-plugin">Jenkins Plugin</a> |
+        <a class="navbar-link" href="https://github.com/damianszczepanik/cucumber-reporting">Standalone</a> |
+        <a class="navbar-link" href="https://github.com/damianszczepanik/cucumber-sandwich">Sandwich</a> |
+        <a class="navbar-link" href="https://github.com/damianszczepanik/maven-cucumber-reporting">Maven</a>
+        &nbsp;&nbsp;
+    </p>
+  </div>
+</nav>
+
+</body>
+</html>
